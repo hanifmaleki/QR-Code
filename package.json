@@ -1,0 +1,52 @@
+{
+  "name": "qr-code",
+  "version": "1.0.0",
+  "description": "A perfect first challenge if you're new to HTML and CSS. The card layout doesn't shift, so it's ideal if you haven't learned about building responsive layouts yet.",
+  "keywords": [
+    "QR-Code",
+    "learning",
+    "frontend-mentor"
+  ],
+  "homepage": "https://github.com/hanifmaleki/QR-Code#readme",
+  "bugs": {
+    "url": "https://github.com/hanifmaleki/QR-Code/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hanifmaleki/QR-Code.git"
+  },
+  "license": "ISC",
+  "author": "Hanif Maleki",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "sass src/scss:dist/css",
+    "watch-scss": "chokidar 'src/scss/**/*.scss' -c 'npm run scss'",
+    "pug": "watch 'node build-pug.js' src/pug",
+    "watch-js": "watch 'copy-files-from-to --when-file-exists overwrite' src/js",
+    "dev": "concurrently \"npm run watch-scss\" \"npm run pug\" \"npm run watch-js\" \"live-server dist\"",
+    "scss:build": "sass src/scss:dist/css --style=compressed",
+    "pug:build": "node build-pug.js",
+    "copy-js": "copy-files-from-to --when-file-exists overwrite",
+    "build": "npm run scss:build && npm run pug:build && npm run copy-js"
+  },
+  "dependencies": {
+    "chokidar-cli": "^3.0.0",
+    "concurrently": "^9.2.1",
+    "copy-files-from-to": "^3.12.1",
+    "pug-cli": "^1.0.0-alpha6",
+    "sass": "^1.91.0",
+    "watch": "^1.0.2"
+  },
+  "copyFiles": [
+    {
+      "from": "src/js",
+      "to": "dist"
+    },
+    {
+      "from": "images",
+      "to": "dist"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+:root {
+    --color-white: hsl(0, 0%, 100%);
+    --color-slate-300: hsl(212, 45%, 89%);
+    --color-slate-500: hsl(216, 15%, 48%);
+    --color-slate-900: hsl(218, 44%, 22%);
+}
+
+// SCSS variables referencing CSS variables
+$white: var(--color-white);
+$slate-300: var(--color-slate-300);
+$slate-500: var(--color-slate-500);
+$slate-900: var(--color-slate-900);
+
+// Font Sizes
+$fs-base: 0.75rem;
+$fs-lg: 1.25rem;
+//
+// Line-heights
+$lh-base: 1.25rem;
+$lh-lg: 1.75;
+
+//Breakpoint
+$bp-sm: 480px;
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == sm {
+        @media (min-width: $bp-sm) { @content }
+    }
+}
